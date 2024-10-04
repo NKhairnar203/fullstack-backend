@@ -20,7 +20,11 @@ app.use(cors(corsOptions));
 // Middleware
 app.use(bodyParser.json());
 
-app.use("/api", productRoute);
+app.get("/",(req,res)=>{
+  res.send("Connected")
+})
+
+app.use("/api", productRoute)
 app.use("/api", userRoute);
 
 app.listen(3007, async () => {
